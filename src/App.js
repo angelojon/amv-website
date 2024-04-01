@@ -1,11 +1,13 @@
 import React from 'react';
+import Navbar from './navbar';
+import Homepage from './pages';
 
 function App() {
   return (
-    <div className="container mx-auto">
-      <h1 className="font-bold text-center mt-8">Welcome to My Events Website</h1>
-      <p className="font-bold text-center text-gray-700 mt-4">This is a test commit</p>
-    </div>
+    <>
+    <Navbar></Navbar>
+    <Homepage></Homepage>
+  </>
   );
 }
 
