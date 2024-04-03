@@ -13,12 +13,12 @@ function Homepage() {
           <h1 className="text-white font-bold text-4xl">Hello</h1>
         </div>
 
-        <div className="min-h-screen w-screen flex flex-col items-center mt-36">
-          <div className="flex flex-col items-center">
-            <p className="inter tracking-widest text-gray-700 font-medium">
+        <div className="min-h-screen w-screen flex flex-col items-center mt-36 border">
+          <div className="flex flex-col items-center w-6/12 border">
+            <p className="inter tracking-widest text-gray-700 font-medium border ">
               OUR PROMISE
             </p>
-            <p className="playfair text-4xl ">
+            <p className="playfair text-4xl w-full text-wrap text-center border">
               EVERY EVENT BEGINS WITH A STORY.
             </p>
 
