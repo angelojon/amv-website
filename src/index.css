@@ -1,3 +1,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+    font-family: Playfair Display;
+    src: url(../public/fonts/PlayfairDisplay-VariableFont_wght.ttf);
+}
+
+.playfair {
+    font-family: Playfair Display;
+}
+
+@font-face {
+    font-family: Inter;
+    src: url(../public/fonts/Inter-VariableFont_slnt\,wght.ttf);
+}
+
+.inter {
+    font-family: Inter;
+}
