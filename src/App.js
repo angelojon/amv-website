@@ -1,13 +1,28 @@
-import React from 'react';
-import Navbar from './navbar';
-import Homepage from './pages';
+import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Navbar from "./navbar";
+import Homepage from "./pages/index";
+import OurTeam from "./pages/aboutus-ourteam";
+import WhyAmv from "./pages/aboutus-whyamv";
+import ContactUs from "./pages/contactus";
+import Footer from "./footer";
 
 function App() {
   return (
-    <>
-    <Navbar></Navbar>
-    <Homepage></Homepage>
-  </>
+    <Router>
+      <div className="flex flex-col min-h-screen">
+        <Navbar />
+        <div className="flex-grow">
+          <Routes>
+            <Route path="/" element={<Homepage />} />
+            <Route path="/about/our-team" element={<OurTeam />} />
+            <Route path="/about/why-amv" element={<WhyAmv />} />
+            <Route path="/contact" element={<ContactUs />} />
+          </Routes>
+        </div>
+        <Footer />
+      </div>
+    </Router>
   );
 }
 

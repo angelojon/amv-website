@@ -1,51 +1,121 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 
 function Navbar() {
-  // State to track if the navbar is open or closed
   const [isOpen, setIsOpen] = useState(false);
+  const [aboutDropdownOpen, setAboutDropdownOpen] = useState(false);
+  const dropdownRef = useRef(null);
+
+  const toggleAboutDropdown = () => {
+    setAboutDropdownOpen(!aboutDropdownOpen);
+  };
+
+  const closeAboutDropdown = () => {
+    setAboutDropdownOpen(false);
+  };
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        closeAboutDropdown();
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   return (
- <nav className="absolute inset-x-0 top-0 bg-transparent z-50">      {/* Logo */}
+    <nav className="absolute inset-x-0 top-0 bg-transparent z-50">
       <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 flex items-center justify-between h-16">
         <div className="flex-shrink-0">
-          <span className="text-white font-bold">Logo</span>
+          <span className="text-black font-bold">Logo</span>
         </div>
-        {/* Menu items */}
         <div className="hidden md:flex md:items-center md:space-x-4">
-          <a href="#" className="text-white hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+          <Link
+            to="/"
+            className="text-black hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+          >
             Home
-          </a>
-          <a href="#" className="text-white hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+          </Link>
+          <Link
+            to="/services"
+            className="text-black hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+          >
             Services
-          </a>
-          <a href="#" className="text-white hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
-            About Us
-          </a>
-          <a href="#" className="text-white hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+          </Link>
+          <div className="relative" ref={dropdownRef}>
+            <button
+              onClick={toggleAboutDropdown}
+              className="flex items-center text-black hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+            >
+              About
+              <svg
+                className="ml-1 h-4 w-4"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </button>
+            {aboutDropdownOpen && (
+              <div className="absolute left-0 mt-2 w-48 bg-white border rounded-md shadow-lg">
+                <Link
+                  to="/about/our-team"
+                  onClick={closeAboutDropdown}
+                  className="inter text-sm block px-4 py-2 text-gray-800 hover:bg-gray-200"
+                >
+                  Our Team
+                </Link>
+                <Link
+                  to="/about/why-amv"
+                  onClick={closeAboutDropdown}
+                  className="inter text-sm block px-4 py-2 text-gray-800 hover:bg-gray-200"
+                >
+                  Why AMV
+                </Link>
+              </div>
+            )}
+          </div>
+          <Link
+            to="/gallery"
+            className="text-black hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+          >
             Gallery
-          </a>
-          <a href="#" className="text-white hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
-            Contact
-          </a>
+          </Link>
+          <Link
+            to="/contact"
+            className="text-black hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+          >
+            Contact Us
+          </Link>
         </div>
-        {/* Phone number */}
-        <div className="flex-shrink-0 text-white font-medium hidden md:block">02-233-4234</div>
-        {/* Toggle button for small screens */}
+        <div className="flex-shrink-0 text-black font-medium hidden md:block">
+          02-233-4234
+        </div>
         <div className="md:hidden flex items-center">
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="inline-flex items-center justify-center p-2 rounded-md text-white focus:outline-none"
-            aria-expanded={isOpen ? 'true' : 'false'}
+            className="inline-flex items-center justify-center p-2 rounded-md text-black focus:outline-none"
+            aria-expanded={isOpen ? "true" : "false"}
           >
             <span className="sr-only">Open main menu</span>
-            {/* Conditional rendering for hamburger or X icon */}
             {isOpen ? (
               <svg
                 className="block h-6 w-6"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
-                stroke="white"
+                stroke="currentColor"
               >
                 <path
                   strokeLinecap="round"
@@ -60,7 +130,7 @@ function Navbar() {
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
-                stroke="white"
+                stroke="currentColor"
               >
                 <path
                   strokeLinecap="round"
@@ -73,25 +143,73 @@ function Navbar() {
           </button>
         </div>
       </div>
-      {/* Mobile menu */}
       {isOpen && (
         <div className="md:hidden bg-gray-700 absolute top-16 left-0 w-full">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            <a href="#" className="text-gray-300 hover:bg-gray-900 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+            <Link
+              to="/"
+              className="text-gray-300 hover:bg-gray-900 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+            >
               Home
-            </a>
-            <a href="#" className="text-gray-300 hover:bg-gray-900 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+            </Link>
+            <Link
+              to="/services"
+              className="text-gray-300 hover:bg-gray-900 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+            >
               Services
-            </a>
-            <a href="#" className="text-gray-300 hover:bg-gray-900 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
-              About Us
-            </a>
-            <a href="#" className="text-gray-300 hover:bg-gray-900 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+            </Link>
+            <div className="relative">
+              <button
+                onClick={toggleAboutDropdown}
+                className="flex items-center w-full text-left text-gray-300 hover:bg-gray-900 hover:text-white px-3 py-2 rounded-md text-base font-medium"
+              >
+                About
+                <svg
+                  className="ml-1 h-4 w-4"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </button>
+              {aboutDropdownOpen && (
+                <div className="mt-1 w-full bg-gray-700">
+                  <Link
+                    to="/about/our-team"
+                    onClick={closeAboutDropdown}
+                    className="inter text-gray-300 hover:bg-gray-900 hover:text-white block px-3 py-2 rounded-md text-sm font-medium"
+                  >
+                    Our Team
+                  </Link>
+                  <Link
+                    to="/about/why-amv"
+                    onClick={closeAboutDropdown}
+                    className="inter text-gray-300 hover:bg-gray-900 hover:text-white block px-3 py-2 rounded-md text-sm font-medium"
+                  >
+                    Why AMV
+                  </Link>
+                </div>
+              )}
+            </div>
+            <Link
+              to="/gallery"
+              className="text-gray-300 hover:bg-gray-900 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+            >
               Gallery
-            </a>
-            <a href="#" className="text-gray-300 hover:bg-gray-900 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+            </Link>
+            <Link
+              to="/contact"
+              className="text-gray-300 hover:bg-gray-900 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+            >
               Contact Us
-            </a>
+            </Link>
           </div>
         </div>
       )}
@@ -99,7 +217,4 @@ function Navbar() {
   );
 }
 
-
-
 export default Navbar;
-
