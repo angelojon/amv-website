@@ -19,3 +19,13 @@
 .inter {
     font-family: Inter;
 }
+
+.slick-slide {
+    margin-right: 10px;
+    /* Adjust the margin value to add the desired space */
+}
+
+.slider-container {
+    height: 400px;
+    /* Adjust the height as needed */
+}
