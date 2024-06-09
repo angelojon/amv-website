@@ -1,7 +1,7 @@
 import React from "react";
 
 const WhyAmv = () => (
-  <div className="mx-auto py-8 pt-20">
+  <div className="truncate mx-auto py-8 pt-20">
     <div className="px-8 py-24 flex justify-center items-center">
       <div className="text-center">
         <p className="playfair text-4xl w-full text-wrap text-center">
@@ -10,11 +10,18 @@ const WhyAmv = () => (
       </div>
     </div>
     <div className="flex justify-center">
-      <img
-        src="/photos/home-wallpaper.jpg"
-        alt="Why AMV"
-        className="w-full sm:w-3/4 lg:w-2/3 object-cover"
-      />
+      <a
+        href="/photos/home-wallpaper.jpg"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex justify-center"
+      >
+        <img
+          src="/photos/home-wallpaper.jpg"
+          alt="Why AMV"
+          className="w-full sm:w-3/4 lg:w-2/3 object-cover"
+        />
+      </a>
     </div>
 
     <div className="w-screen flex flex-col items-center mt-24">
@@ -42,17 +49,37 @@ const WhyAmv = () => (
     </div>
 
     <div className="flex justify-center mt-24">
-      <div className="flex flex-wrap justify-center gap-4 w-full sm:w-3/4 lg:w-2/3">
-        <img
-          src="/photos/home-wallpaper.jpg"
-          alt="Photo 1"
-          className="w-full sm:w-1/2 lg:w-1/2 object-cover"
-        />
-        <img
-          src="/photos/home-wallpaper.jpg"
-          alt="Photo 2"
-          className="w-full sm:w-1/2 lg:w-1/2 object-cover"
-        />
+      <div className="flex justify-center gap-4 w-full sm:w-3/4 lg:w-2/3">
+        <div className="w-full sm:w-1/2">
+          <a
+            href="/photos/home-wallpaper.jpg"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div className="bg-cover bg-center h-96 flex items-center justify-center">
+              <img
+                src="/photos/home-wallpaper.jpg"
+                alt="Photo 1"
+                className="w-full h-auto object-cover"
+              />
+            </div>
+          </a>
+        </div>
+        <div className="w-full sm:w-1/2">
+          <a
+            href="/photos/home-wallpaper.jpg"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div className="bg-cover bg-center h-96 flex items-center justify-center">
+              <img
+                src="/photos/home-wallpaper.jpg"
+                alt="Photo 2"
+                className="w-full h-auto object-cover"
+              />
+            </div>
+          </a>
+        </div>
       </div>
     </div>
 
@@ -72,6 +99,89 @@ const WhyAmv = () => (
             dream event is within reach – let's make it a reality together.
           </p>
         </div>
+      </div>
+    </div>
+
+    <div className="flex justify-center mt-24 mb-24">
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 w-full sm:w-3/4 lg:w-2/3">
+        <a
+          href="/photos/home-wallpaper.jpg"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <div className="bg-cover bg-center h-96 flex items-center justify-center">
+            <img
+              src="/photos/home-wallpaper.jpg"
+              alt="Photo 3"
+              className="w-full h-auto object-cover"
+            />
+          </div>
+        </a>
+        <a
+          href="/photos/home-wallpaper.jpg"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <div className="bg-cover bg-center h-96 flex items-center justify-center">
+            <img
+              src="/photos/home-wallpaper.jpg"
+              alt="Photo 4"
+              className="w-full h-auto object-cover"
+            />
+          </div>
+        </a>
+        <a
+          href="/photos/home-wallpaper.jpg"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <div className="bg-cover bg-center h-96 flex items-center justify-center">
+            <img
+              src="/photos/home-wallpaper.jpg"
+              alt="Photo 5"
+              className="w-full h-auto object-cover"
+            />
+          </div>
+        </a>
+        <a
+          href="/photos/home-wallpaper.jpg"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <div className="bg-cover bg-center h-96 flex items-center justify-center">
+            <img
+              src="/photos/home-wallpaper.jpg"
+              alt="Photo 6"
+              className="w-full h-auto object-cover"
+            />
+          </div>
+        </a>
+        <a
+          href="/photos/home-wallpaper.jpg"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <div className="bg-cover bg-center h-96 flex items-center justify-center">
+            <img
+              src="/photos/home-wallpaper.jpg"
+              alt="Photo 7"
+              className="w-full h-auto object-cover"
+            />
+          </div>
+        </a>
+        <a
+          href="/photos/home-wallpaper.jpg"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <div className="bg-cover bg-center h-96 flex items-center justify-center">
+            <img
+              src="/photos/home-wallpaper.jpg"
+              alt="Photo 8"
+              className="w-full h-auto object-cover"
+            />
+          </div>
+        </a>
       </div>
     </div>
   </div>

@@ -5,6 +5,9 @@ import Homepage from "./pages/index";
 import OurTeam from "./pages/aboutus-ourteam";
 import WhyAmv from "./pages/aboutus-whyamv";
 import ContactUs from "./pages/contactus";
+import Gallery from "./pages/gallery";
+import Services from "./pages/services";
+
 import Footer from "./footer";
 
 function App() {
@@ -17,6 +20,9 @@ function App() {
             <Route path="/" element={<Homepage />} />
             <Route path="/about/our-team" element={<OurTeam />} />
             <Route path="/about/why-amv" element={<WhyAmv />} />
+            <Route path="/gallery" element={<Gallery />} />
+            <Route path="/services" element={<Services />} />
+
             <Route path="/contact" element={<ContactUs />} />
           </Routes>
         </div>
