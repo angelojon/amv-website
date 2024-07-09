@@ -1,9 +1,12 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 function Navbar() {
+  const location = useLocation();
+  const isIndexPage = location.pathname === "/";
   const [isOpen, setIsOpen] = useState(false);
   const [aboutDropdownOpen, setAboutDropdownOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const dropdownRef = useRef(null);
 
   const toggleAboutDropdown = () => {
@@ -21,35 +24,62 @@ function Navbar() {
       }
     };
 
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
     document.addEventListener("mousedown", handleClickOutside);
+    if (isIndexPage) {
+      window.addEventListener("scroll", handleScroll);
+    }
+
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
+      if (isIndexPage) {
+        window.removeEventListener("scroll", handleScroll);
+      }
     };
-  }, []);
+  }, [isIndexPage]);
 
   return (
-    <nav className="absolute inset-x-0 top-0 bg-transparent z-50">
+    <nav
+      className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${
+        isIndexPage
+          ? scrolled
+            ? "bg-white shadow-md text-black"
+            : "bg-transparent text-white"
+          : "bg-white text-black"
+      }`}
+    >
       <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 flex items-center justify-between h-16">
         <div className="flex-shrink-0">
-          <span className="text-black font-bold">Logo</span>
+          <img
+            src="/photos/AMV_Logo_WHITE.png"
+            alt="Logo"
+            className="h-32 w-32"
+          />
         </div>
-        <div className="hidden md:flex md:items-center md:space-x-4">
+        <div className="playfair hidden md:flex md:items-center md:space-x-4">
           <Link
             to="/"
-            className="text-black hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+            className="hover:text-gray-500 px-3 py-2 rounded-md text-sm font-medium"
           >
             Home
           </Link>
           <Link
             to="/services"
-            className="text-black hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+            className="hover:text-gray-500 px-3 py-2 rounded-md text-sm font-medium"
           >
             Services
           </Link>
           <div className="relative" ref={dropdownRef}>
             <button
               onClick={toggleAboutDropdown}
-              className="flex items-center text-black hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+              className="flex items-center hover:text-gray-500 px-3 py-2 rounded-md text-sm font-medium"
             >
               About
               <svg
@@ -72,14 +102,14 @@ function Navbar() {
                 <Link
                   to="/about/our-team"
                   onClick={closeAboutDropdown}
-                  className="inter text-sm block px-4 py-2 text-gray-800 hover:bg-gray-200"
+                  className="inter text-sm block px-4 py-2 text-black hover:text-gray-500"
                 >
                   Our Team
                 </Link>
                 <Link
                   to="/about/why-amv"
                   onClick={closeAboutDropdown}
-                  className="inter text-sm block px-4 py-2 text-gray-800 hover:bg-gray-200"
+                  className="inter text-sm block px-4 py-2 text-black hover:text-gray-500"
                 >
                   Why AMV
                 </Link>
@@ -88,24 +118,24 @@ function Navbar() {
           </div>
           <Link
             to="/gallery"
-            className="text-black hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+            className="hover:text-gray-500 px-3 py-2 rounded-md text-sm font-medium"
           >
             Gallery
           </Link>
           <Link
             to="/contact"
-            className="text-black hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+            className="hover:text-gray-500 px-3 py-2 rounded-md text-sm font-medium"
           >
             Contact Us
           </Link>
         </div>
-        <div className="flex-shrink-0 text-black font-medium hidden md:block">
+        <div className="flex-shrink-0 font-medium hidden md:block">
           02-233-4234
         </div>
         <div className="md:hidden flex items-center">
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="inline-flex items-center justify-center p-2 rounded-md text-black focus:outline-none"
+            className="inline-flex items-center justify-center p-2 rounded-md focus:outline-none"
             aria-expanded={isOpen ? "true" : "false"}
           >
             <span className="sr-only">Open main menu</span>
@@ -144,7 +174,11 @@ function Navbar() {
         </div>
       </div>
       {isOpen && (
-        <div className="md:hidden bg-gray-700 absolute top-16 left-0 w-full">
+        <div
+          className={`md:hidden ${
+            isIndexPage ? "bg-transparent" : "bg-white"
+          } absolute top-16 left-0 w-full`}
+        >
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             <Link
               to="/"

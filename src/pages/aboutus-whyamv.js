@@ -59,7 +59,7 @@ const WhyAmv = () => (
             <div className="bg-cover bg-center h-96 flex items-center justify-center">
               <img
                 src="/photos/home-wallpaper.jpg"
-                alt="Photo 1"
+                alt="1st"
                 className="w-full h-auto object-cover"
               />
             </div>
@@ -74,7 +74,7 @@ const WhyAmv = () => (
             <div className="bg-cover bg-center h-96 flex items-center justify-center">
               <img
                 src="/photos/home-wallpaper.jpg"
-                alt="Photo 2"
+                alt="2nd"
                 className="w-full h-auto object-cover"
               />
             </div>
@@ -112,7 +112,7 @@ const WhyAmv = () => (
           <div className="bg-cover bg-center h-96 flex items-center justify-center">
             <img
               src="/photos/home-wallpaper.jpg"
-              alt="Photo 3"
+              alt="3rd"
               className="w-full h-auto object-cover"
             />
           </div>
@@ -125,7 +125,7 @@ const WhyAmv = () => (
           <div className="bg-cover bg-center h-96 flex items-center justify-center">
             <img
               src="/photos/home-wallpaper.jpg"
-              alt="Photo 4"
+              alt="P4th"
               className="w-full h-auto object-cover"
             />
           </div>
@@ -138,7 +138,7 @@ const WhyAmv = () => (
           <div className="bg-cover bg-center h-96 flex items-center justify-center">
             <img
               src="/photos/home-wallpaper.jpg"
-              alt="Photo 5"
+              alt="5th"
               className="w-full h-auto object-cover"
             />
           </div>
@@ -151,7 +151,7 @@ const WhyAmv = () => (
           <div className="bg-cover bg-center h-96 flex items-center justify-center">
             <img
               src="/photos/home-wallpaper.jpg"
-              alt="Photo 6"
+              alt="6th"
               className="w-full h-auto object-cover"
             />
           </div>
@@ -164,7 +164,7 @@ const WhyAmv = () => (
           <div className="bg-cover bg-center h-96 flex items-center justify-center">
             <img
               src="/photos/home-wallpaper.jpg"
-              alt="Photo 7"
+              alt="P7th"
               className="w-full h-auto object-cover"
             />
           </div>
@@ -177,7 +177,7 @@ const WhyAmv = () => (
           <div className="bg-cover bg-center h-96 flex items-center justify-center">
             <img
               src="/photos/home-wallpaper.jpg"
-              alt="Photo 8"
+              alt="8th"
               className="w-full h-auto object-cover"
             />
           </div>

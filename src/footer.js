@@ -2,10 +2,14 @@ import React from "react";
 
 function Footer() {
   return (
-    <footer className="bg-black text-white py-10">
-      <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 justify-center">
+    <footer className="bg-black opacity-9 text-white py-16">
+      <div className="inter container mx-auto flex flex-col md:flex-row items-center justify-center space-y-8 md:space-y-0 md:space-x-80">
         <div className="flex justify-center md:justify-start items-center">
-          <img src="path/to/your/logo.png" alt="Logo" className="h-16" />
+          <img
+            src="/photos/AMV_Logo_WHITE.png"
+            alt="Logo"
+            className="h-80 w-80"
+          />
         </div>
         <div className="text-center md:text-left">
           <h3 className="text-gray-400 text-s mb-4 tracking-widest">
@@ -43,12 +47,12 @@ function Footer() {
               href="mailto:inquiries@amveventsph.com"
               className="hover:underline"
             >
-              contact@yourwebsite.com
+              inquiries@amveventsph.com
             </a>
           </p>
           <p>
             <a href="tel:1234567890" className="hover:underline">
-              (123) 456-7890
+              (02) 783-2351
             </a>
           </p>
           <p>Valenzuela City, Philippines</p>

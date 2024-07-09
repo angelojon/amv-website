@@ -4,23 +4,35 @@ const Services = () => {
   const [selectedCategory, setSelectedCategory] = useState("weddings");
 
   const categories = [
-    { name: "WEDDINGS", id: "weddings" },
-    { name: "EVENTS", id: "events" },
-    { name: "CORPORATE", id: "corporate" },
+    { name: "LAUNCHES", id: "launches" },
+    { name: "DESIGN SERVICES", id: "design" },
+    { name: "CORPORATE GIVEAWAYS", id: "corporate" },
+    { name: "CREATIVES", id: "creatives" },
+    { name: "INAUGURATIONS", id: "inaugurations" },
   ];
 
   const images = {
-    weddings: [
+    launches: [
       "/photos/home-wallpaper.jpg",
       "/photos/home-wallpaper.jpg",
       "/photos/home-wallpaper.jpg",
     ],
-    events: [
+    design: [
       "/photos/pexels-wendy-wei-1190297.jpg",
       "/photos/pexels-wendy-wei-1190297.jpg",
       "/photos/pexels-wendy-wei-1190297.jpg",
     ],
     corporate: [
+      "/photos/kirsten-frank-9HRHn_41IgY-unsplash.jpg",
+      "/photos/kirsten-frank-9HRHn_41IgY-unsplash.jpg",
+      "/photos/kirsten-frank-9HRHn_41IgY-unsplash.jpg",
+    ],
+    creatives: [
+      "/photos/kirsten-frank-9HRHn_41IgY-unsplash.jpg",
+      "/photos/kirsten-frank-9HRHn_41IgY-unsplash.jpg",
+      "/photos/kirsten-frank-9HRHn_41IgY-unsplash.jpg",
+    ],
+    inaugurations: [
       "/photos/kirsten-frank-9HRHn_41IgY-unsplash.jpg",
       "/photos/kirsten-frank-9HRHn_41IgY-unsplash.jpg",
       "/photos/kirsten-frank-9HRHn_41IgY-unsplash.jpg",
