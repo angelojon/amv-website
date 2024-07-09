@@ -45,7 +45,7 @@ function Homepage() {
           <div className="w-full flex flex-col md:flex-row items-center justify-center gap-8 px-8">
             <div className="relative w-full md:w-6/12 flex flex-col md:flex-row items-center justify-center gap-4">
               <img
-                src="/photos/gallery/covemanila/7COVEMANILA.jpg"
+                src="/photos/sample.jpg"
                 alt="1"
                 className="border-4 border-black w-5/12 h-auto object-cover rounded-3xl z-0"
                 style={{
@@ -54,7 +54,7 @@ function Homepage() {
                 }}
               />
               <img
-                src="/photos/gallery/covemanila/9COVEMANILA.jpg"
+                src="/photos/sample.jpg"
                 alt="2"
                 className="border-4 border-black w-5/12 h-auto object-cover rounded-3xl z-10"
                 style={{
@@ -147,7 +147,7 @@ function Homepage() {
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                 <div className="text-center">
                   <img
-                    src="/photos/gallery/covemanila/1COVEMANILA.jpg"
+                    src="/photos/sample.jpg"
                     alt="Service 1"
                     className="w-full h-auto object-cover rounded-lg"
                   />
@@ -157,7 +157,7 @@ function Homepage() {
                 </div>
                 <div className="text-center">
                   <img
-                    src="/photos/gallery/covemanila/2COVEMANILA.jpg"
+                    src="/photos/sample.jpg"
                     alt="Service 2"
                     className="w-full h-auto object-cover rounded-lg"
                   />
@@ -167,7 +167,7 @@ function Homepage() {
                 </div>
                 <div className="text-center">
                   <img
-                    src="/photos/gallery/covemanila/3COVEMANILA.jpg"
+                    src="/photos/sample.jpg"
                     alt="Service 3"
                     className="w-full h-auto object-cover rounded-lg"
                   />
@@ -177,7 +177,7 @@ function Homepage() {
                 </div>
                 <div className="text-center">
                   <img
-                    src="/photos/gallery/covemanila/4COVEMANILA.jpg"
+                    src="/photos/sample.jpg"
                     alt="Service 4"
                     className="w-full h-auto object-cover rounded-lg"
                   />
@@ -187,7 +187,7 @@ function Homepage() {
                 </div>
                 <div className="text-center">
                   <img
-                    src="/photos/gallery/covemanila/5COVEMANILA.jpg"
+                    src="/photos/sample.jpg"
                     alt="Service 5"
                     className="w-full h-auto object-cover rounded-lg"
                   />
@@ -197,7 +197,7 @@ function Homepage() {
                 </div>
                 <div className="text-center">
                   <img
-                    src="/photos/gallery/covemanila/6COVEMANILA.jpg"
+                    src="/photos/sample.jpg"
                     alt="Service 6"
                     className="w-full h-auto object-cover rounded-lg"
                   />
@@ -207,7 +207,7 @@ function Homepage() {
                 </div>
                 <div className="text-center">
                   <img
-                    src="/photos/gallery/covemanila/7COVEMANILA.jpg"
+                    src="/photos/sample.jpg"
                     alt="Service 7"
                     className="w-full h-auto object-cover rounded-lg"
                   />
@@ -217,7 +217,7 @@ function Homepage() {
                 </div>
                 <div className="text-center">
                   <img
-                    src="/photos/gallery/covemanila/8COVEMANILA.jpg"
+                    src="/photos/sample.jpg"
                     alt="Service 8"
                     className="w-full h-auto object-cover rounded-lg"
                   />
@@ -257,32 +257,32 @@ function Homepage() {
             <div className="w-full flex justify-center mt-4 gap-8">
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                 <img
-                  src="/photos/gallery/concentrix/1CONCENTRIX.jpg"
+                  src="/photos/sample.jpg"
                   alt="Service 1"
                   className="w-full h-auto object-cover rounded-lg"
                 />
                 <img
-                  src="/photos/gallery/concentrix/2CONCENTRIX.jpg"
+                  src="/photos/sample.jpg"
                   alt="Service 2"
                   className="w-full h-auto object-cover rounded-lg"
                 />
                 <img
-                  src="/photos/gallery/concentrix/3CONCENTRIX.jpg"
+                  src="/photos/sample.jpg"
                   alt="Service 3"
                   className="w-full h-auto object-cover rounded-lg"
                 />
                 <img
-                  src="/photos/gallery/concentrix/4CONCENTRIX.jpg"
+                  src="/photos/sample.jpg"
                   alt="Service 4"
                   className="w-full h-auto object-cover rounded-lg"
                 />
                 <img
-                  src="/photos/gallery/concentrix/5CONCENTRIX.jpg"
+                  src="/photos/sample.jpg"
                   alt="Service 5"
                   className="w-full h-auto object-cover rounded-lg"
                 />
                 <img
-                  src="/photos/gallery/concentrix/6CONCENTRIX.jpg"
+                  src="/photos/sample.jpg"
                   alt="Service 6"
                   className="w-full h-auto object-cover rounded-lg"
                 />
@@ -414,8 +414,7 @@ function Homepage() {
           id="contact"
           className="relative w-screen flex flex-col items-center mt-20  bg-cover bg-center"
           style={{
-            backgroundImage:
-              "url('/photos/gallery/concentrix/6CONCENTRIX.jpg')", // Replace with your actual image path
+            backgroundImage: "url('/photos/sample.jpg')", // Replace with your actual image path
           }}
         >
           <div className="absolute inset-0 bg-black opacity-50"></div>{" "}
