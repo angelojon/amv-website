@@ -3,12 +3,12 @@ import React from "react";
 function Footer() {
   return (
     <footer className="bg-black opacity-9 text-white py-16">
-      <div className="inter container mx-auto flex flex-col md:flex-row items-center justify-center space-y-8 md:space-y-0 md:space-x-80">
+      <div className="inter container mx-auto flex flex-col md:flex-row items-center justify-between space-y-8 md:space-y-0 md:space-x-12 px-8">
         <div className="flex justify-center md:justify-start items-center">
           <img
             src="/photos/AMV_Logo_WHITE.png"
             alt="Logo"
-            className="h-80 w-80"
+            className="h-40 w-40 md:h-80 md:w-80"
           />
         </div>
         <div className="text-center md:text-left">
@@ -18,7 +18,7 @@ function Footer() {
           <ul className="space-y-2">
             <li>
               <a
-                href="https://www.facebook.com"
+                href="https://www.facebook.com/amveventsmanagement"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:underline"
@@ -28,7 +28,7 @@ function Footer() {
             </li>
             <li>
               <a
-                href="https://www.instagram.com"
+                href="https://www.instagram.com/amv.eventsandadvertising/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:underline"

@@ -1,29 +1,17 @@
-import React, { useState, useEffect, useRef } from "react";
-import { Link, useLocation } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { FaFacebook, FaInstagram } from "react-icons/fa";
 
 function Navbar() {
-  const location = useLocation();
-  const isIndexPage = location.pathname === "/";
   const [isOpen, setIsOpen] = useState(false);
-  const [aboutDropdownOpen, setAboutDropdownOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const dropdownRef = useRef(null);
 
-  const toggleAboutDropdown = () => {
-    setAboutDropdownOpen(!aboutDropdownOpen);
-  };
-
-  const closeAboutDropdown = () => {
-    setAboutDropdownOpen(false);
+  const handleScrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    // Reload the page to reset any active section highlighting
+    window.location.href = "/";
   };
 
   useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-        closeAboutDropdown();
-      }
-    };
-
     const handleScroll = () => {
       if (window.scrollY > 50) {
         setScrolled(true);
@@ -32,105 +20,87 @@ function Navbar() {
       }
     };
 
-    document.addEventListener("mousedown", handleClickOutside);
-    if (isIndexPage) {
-      window.addEventListener("scroll", handleScroll);
-    }
-
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-      if (isIndexPage) {
-        window.removeEventListener("scroll", handleScroll);
+    const handleResize = () => {
+      if (window.innerWidth >= 768 && isOpen) {
+        setIsOpen(false);
       }
     };
-  }, [isIndexPage]);
+
+    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [isOpen]);
 
   return (
     <nav
-      className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${
-        isIndexPage
-          ? scrolled
-            ? "bg-white shadow-md text-black"
-            : "bg-transparent text-white"
-          : "bg-white text-black"
+      className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
+        scrolled ? "bg-white h-20 shadow-md" : "bg-white h-24"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 flex items-center justify-between h-16">
-        <div className="flex-shrink-0">
-          <img
-            src="/photos/AMV_Logo_WHITE.png"
-            alt="Logo"
-            className="h-32 w-32"
-          />
-        </div>
-        <div className="playfair hidden md:flex md:items-center md:space-x-4">
-          <Link
-            to="/"
-            className="hover:text-gray-500 px-3 py-2 rounded-md text-sm font-medium"
+      <div
+        className={`max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 flex items-center justify-between transition-all duration-500 ${
+          scrolled ? "h-20" : "h-24"
+        }`}
+      >
+        {/* Updated to use an <a> tag for logo */}
+        <a
+          href="/"
+          className="flex-shrink-0 cursor-pointer"
+          onClick={handleScrollToTop}
+        >
+          <img src="/photos/AMV_Logo.png" alt="Logo" className="h-40 w-40" />
+        </a>
+        <div className="inter tracking-wider hidden md:flex md:items-center md:space-x-4 text-sm md:text-sm">
+          <a
+            href="#about"
+            className="hover:text-gray-500 px-3 py-2 rounded-md text-m font-medium"
           >
-            Home
-          </Link>
-          <Link
-            to="/services"
-            className="hover:text-gray-500 px-3 py-2 rounded-md text-sm font-medium"
+            About Us
+          </a>
+          <a
+            href="#services"
+            className="hover:text-gray-500 px-3 py-2 rounded-md text-m font-medium"
           >
             Services
-          </Link>
-          <div className="relative" ref={dropdownRef}>
-            <button
-              onClick={toggleAboutDropdown}
-              className="flex items-center hover:text-gray-500 px-3 py-2 rounded-md text-sm font-medium"
-            >
-              About
-              <svg
-                className="ml-1 h-4 w-4"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M19 9l-7 7-7-7"
-                />
-              </svg>
-            </button>
-            {aboutDropdownOpen && (
-              <div className="absolute left-0 mt-2 w-48 bg-white border rounded-md shadow-lg">
-                <Link
-                  to="/about/our-team"
-                  onClick={closeAboutDropdown}
-                  className="inter text-sm block px-4 py-2 text-black hover:text-gray-500"
-                >
-                  Our Team
-                </Link>
-                <Link
-                  to="/about/why-amv"
-                  onClick={closeAboutDropdown}
-                  className="inter text-sm block px-4 py-2 text-black hover:text-gray-500"
-                >
-                  Why AMV
-                </Link>
-              </div>
-            )}
-          </div>
-          <Link
-            to="/gallery"
-            className="hover:text-gray-500 px-3 py-2 rounded-md text-sm font-medium"
+          </a>
+          <a
+            href="#events"
+            className="hover:text-gray-500 px-3 py-2 rounded-md text-m font-medium"
           >
-            Gallery
-          </Link>
-          <Link
-            to="/contact"
-            className="hover:text-gray-500 px-3 py-2 rounded-md text-sm font-medium"
+            Events
+          </a>
+          <a
+            href="#clients"
+            className="hover:text-gray-500 px-3 py-2 rounded-md text-m font-medium"
+          >
+            Clients
+          </a>
+          <a
+            href="#contact"
+            className="hover:text-gray-500 px-3 py-2 rounded-md text-m font-medium"
           >
             Contact Us
-          </Link>
+          </a>
         </div>
-        <div className="flex-shrink-0 font-medium hidden md:block">
-          02-233-4234
+        <div className="flex-shrink-0 hidden md:flex items-center gap-4">
+          <a
+            href="https://www.facebook.com/amveventsmanagement"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaFacebook size={24} />
+          </a>
+          <a
+            href="https://www.instagram.com/amv.eventsandadvertising/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaInstagram size={24} />
+          </a>
         </div>
         <div className="md:hidden flex items-center">
           <button
@@ -173,80 +143,86 @@ function Navbar() {
           </button>
         </div>
       </div>
-      {isOpen && (
-        <div
-          className={`md:hidden ${
-            isIndexPage ? "bg-transparent" : "bg-white"
-          } absolute top-16 left-0 w-full`}
+      <div
+        className={`fixed top-0 right-0 h-full w-64 bg-white shadow-lg transform ${
+          isOpen ? "translate-x-0" : "translate-x-full"
+        } transition-transform duration-300 ease-in-out z-40`}
+      >
+        <button
+          className="absolute top-4 right-4"
+          onClick={() => setIsOpen(false)}
         >
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            <Link
-              to="/"
-              className="text-gray-300 hover:bg-gray-900 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+          <svg
+            className="h-6 w-6"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M6 18L18 6M6 6l12 12"
+            />
+          </svg>
+        </button>
+        <div className="inter text-sm mt-16 px-4">
+          <a
+            href="#about"
+            onClick={() => setIsOpen(false)}
+            className="block text-black py-2 transition-colors duration-300 hover:text-pink-300"
+          >
+            About Us
+          </a>
+          <a
+            href="#services"
+            onClick={() => setIsOpen(false)}
+            className="block text-black py-2 transition-colors duration-300 hover:text-pink-300"
+          >
+            Services
+          </a>
+          <a
+            href="#events"
+            onClick={() => setIsOpen(false)}
+            className="block text-black py-2 transition-colors duration-300 hover:text-pink-300"
+          >
+            Events
+          </a>
+          <a
+            href="#clients"
+            onClick={() => setIsOpen(false)}
+            className="block text-black py-2 transition-colors duration-300 hover:text-pink-300"
+          >
+            Clients
+          </a>
+          <a
+            href="#contact"
+            onClick={() => setIsOpen(false)}
+            className="block text-black py-2 transition-colors duration-300 hover:text-pink-300"
+          >
+            Contact Us
+          </a>
+          <div className="flex items-center justify-center mt-6">
+            <a
+              href="https://www.facebook.com/amveventsmanagement"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-black mx-2 transition-colors duration-300 hover:text-gray-500"
             >
-              Home
-            </Link>
-            <Link
-              to="/services"
-              className="text-gray-300 hover:bg-gray-900 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+              <FaFacebook size={24} />
+            </a>
+            <a
+              href="https://www.instagram.com/amv.eventsandadvertising/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-black mx-2 transition-colors duration-300 hover:text-gray-500"
             >
-              Services
-            </Link>
-            <div className="relative">
-              <button
-                onClick={toggleAboutDropdown}
-                className="flex items-center w-full text-left text-gray-300 hover:bg-gray-900 hover:text-white px-3 py-2 rounded-md text-base font-medium"
-              >
-                About
-                <svg
-                  className="ml-1 h-4 w-4"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M19 9l-7 7-7-7"
-                  />
-                </svg>
-              </button>
-              {aboutDropdownOpen && (
-                <div className="mt-1 w-full bg-gray-700">
-                  <Link
-                    to="/about/our-team"
-                    onClick={closeAboutDropdown}
-                    className="inter text-gray-300 hover:bg-gray-900 hover:text-white block px-3 py-2 rounded-md text-sm font-medium"
-                  >
-                    Our Team
-                  </Link>
-                  <Link
-                    to="/about/why-amv"
-                    onClick={closeAboutDropdown}
-                    className="inter text-gray-300 hover:bg-gray-900 hover:text-white block px-3 py-2 rounded-md text-sm font-medium"
-                  >
-                    Why AMV
-                  </Link>
-                </div>
-              )}
-            </div>
-            <Link
-              to="/gallery"
-              className="text-gray-300 hover:bg-gray-900 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-            >
-              Gallery
-            </Link>
-            <Link
-              to="/contact"
-              className="text-gray-300 hover:bg-gray-900 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-            >
-              Contact Us
-            </Link>
+              <FaInstagram size={24} />
+            </a>
           </div>
         </div>
-      )}
+      </div>
     </nav>
   );
 }
