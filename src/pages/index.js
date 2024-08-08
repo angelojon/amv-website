@@ -314,7 +314,7 @@ function Homepage() {
           </div>
         </div>
 
-        {/* Fifth section - our clients */}
+        {/* Fourth section - our clients */}
         <div id="clients" className="py-20 mb-24" ref={clientsRef}>
           <div
             className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ${
@@ -446,7 +446,7 @@ function Homepage() {
           </div>
         </div>
 
-        {/* Sixth section - Inquiries */}
+        {/* Fifth section - Inquiries */}
         <div
           id="contact"
           className="relative w-screen flex flex-col items-center mt-20  bg-cover bg-center"
