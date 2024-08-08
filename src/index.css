@@ -20,12 +20,13 @@
     font-family: Inter;
 }
 
-.slick-slide {
-    margin-right: 10px;
-    /* Adjust the margin value to add the desired space */
+html {
+    scroll-behavior: smooth;
 }
 
-.slider-container {
-    height: 400px;
-    /* Adjust the height as needed */
+.parallax {
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }

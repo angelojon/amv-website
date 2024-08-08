@@ -46,15 +46,18 @@ function Navbar() {
           scrolled ? "h-20" : "h-24"
         }`}
       >
-        {/* Updated to use an <a> tag for logo */}
         <a
           href="/"
           className="flex-shrink-0 cursor-pointer"
           onClick={handleScrollToTop}
         >
-          <img src="/photos/AMV_Logo.png" alt="Logo" className="h-40 w-40" />
+          <img
+            src="/photos/amv_logo_black.png"
+            alt="Logo"
+            className="h-40 w-40"
+          />
         </a>
-        <div className="inter tracking-wider hidden md:flex md:items-center md:space-x-4 text-sm md:text-sm">
+        <div className="inter tracking-wider hidden md:flex md:items-center md:space-x-4 text-sm">
           <a
             href="#about"
             className="hover:text-gray-500 px-3 py-2 rounded-md text-m font-medium"
@@ -67,12 +70,7 @@ function Navbar() {
           >
             Services
           </a>
-          <a
-            href="#events"
-            className="hover:text-gray-500 px-3 py-2 rounded-md text-m font-medium"
-          >
-            Events
-          </a>
+
           <a
             href="#clients"
             className="hover:text-gray-500 px-3 py-2 rounded-md text-m font-medium"
@@ -183,13 +181,6 @@ function Navbar() {
             Services
           </a>
           <a
-            href="#events"
-            onClick={() => setIsOpen(false)}
-            className="block text-black py-2 transition-colors duration-300 hover:text-pink-300"
-          >
-            Events
-          </a>
-          <a
             href="#clients"
             onClick={() => setIsOpen(false)}
             className="block text-black py-2 transition-colors duration-300 hover:text-pink-300"
@@ -202,6 +193,13 @@ function Navbar() {
             className="block text-black py-2 transition-colors duration-300 hover:text-pink-300"
           >
             Contact Us
+          </a>
+          <a
+            href="#contact"
+            onClick={() => setIsOpen(false)}
+            className="block text-black py-2 transition-colors duration-300 hover:text-pink-300"
+          >
+            Call Us: (02) 783-2351
           </a>
           <div className="flex items-center justify-center mt-6">
             <a

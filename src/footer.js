@@ -3,10 +3,10 @@ import React from "react";
 function Footer() {
   return (
     <footer className="bg-black opacity-9 text-white py-16">
-      <div className="inter container mx-auto flex flex-col md:flex-row items-center justify-between space-y-8 md:space-y-0 md:space-x-12 px-8">
+      <div className="inter container mx-auto flex flex-col md:flex-row items-center justify-between space-y-8 md:space-y-0 md:space-x-12 px-40">
         <div className="flex justify-center md:justify-start items-center">
           <img
-            src="/photos/AMV_Logo_WHITE.png"
+            src="/photos/amv_logo_white.png"
             alt="Logo"
             className="h-40 w-40 md:h-80 md:w-80"
           />
