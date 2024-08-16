@@ -456,8 +456,8 @@ function Homepage() {
         >
           {/* Dark overlay */}
           <div className="absolute inset-0 bg-black opacity-50"></div>{" "}
-          <div className="relative w-full flex flex-col justify-items-center md:items-center p-24">
-            <p className=" inter text-white text-3xl sm:text-sl md:text-2xl lg:text-4xl w-full text-wrap text-center md:text-center mt-4 font-bold">
+          <div className="relative w-full flex flex-col justify-items-center items-center p-24">
+            <p className=" inter text-white text-lg sm:text-xl md:text-2xl lg:text-4xl w-full text-wrap text-center md:text-center mt-4 font-bold">
               WANT TO TALK ABOUT YOUR EVENT?
             </p>
             <div className="inter text-center md:text-center max-w-[800px] whitespace-normal mt-4 text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl text-white">
