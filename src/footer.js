@@ -3,15 +3,15 @@ import React from "react";
 function Footer() {
   return (
     <footer className="bg-black opacity-9 text-white py-16">
-      <div className="inter container mx-auto flex flex-col md:flex-row items-center justify-between space-y-8 md:space-y-0 md:space-x-12 px-40">
-        <div className="flex justify-center md:justify-start items-center">
+      <div className="inter container mx-auto flex flex-col md:flex-row items-center justify-between space-y-8 md:space-y-0 px-4">
+        <div className="flex justify-center md:justify-start items-center w-full md:w-auto">
           <img
             src="/photos/amv_logo_white.png"
             alt="Logo"
-            className="h-40 w-40 md:h-80 md:w-80"
+            className="h-80 w-80 object-contain min-w-[200px]"
           />
         </div>
-        <div className="text-center md:text-left">
+        <div className="text-center w-full md:w-auto">
           <h3 className="text-gray-400 text-s mb-4 tracking-widest">
             FOLLOW US
           </h3>
@@ -38,7 +38,7 @@ function Footer() {
             </li>
           </ul>
         </div>
-        <div className="text-center md:text-left">
+        <div className="text-center w-full md:w-auto">
           <h3 className="text-gray-400 text-s mb-4 tracking-widest">
             GET IN TOUCH
           </h3>
@@ -57,6 +57,9 @@ function Footer() {
           </p>
           <p>Valenzuela City, Philippines</p>
         </div>
+      </div>
+      <div className="text-center mt-8 text-sm text-gray-400">
+        © AMV Events Management. All rights reserved.
       </div>
     </footer>
   );
