@@ -442,6 +442,11 @@ function Homepage() {
                 alt="Client Logo 18"
                 className="h-20 object-contain mx-auto transition-transform duration-500 ease-in-out transform hover:scale-[1.1] grayscale hover:filter-none transition-filter"
               />
+              <img
+                src="/photos/clients/ateneo.png"
+                alt="Client Logo 18"
+                className="h-20 object-contain mx-auto scale-[1.3] transition-transform duration-500 ease-in-out transform hover:scale-[1.4] grayscale hover:filter-none transition-filter"
+              />
             </div>
           </div>
         </div>
