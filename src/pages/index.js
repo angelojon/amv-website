@@ -56,7 +56,7 @@ function Homepage() {
               <div className="hidden md:block border-0 bg-white rounded-2xl p-4  text-center w-full sm:w-3/4 md:w-1/2 lg:w-1/5 shadow-lg  lg:mb-0 min-w-[200px]">
                 <h3 className="inter text-m font-semibold my-4 flex justify-center items-center">
                   <FaPhoneAlt className="mr-2" />
-                  <span>Call Us: (02) 783-2351</span>
+                  <span>Call Us: (0917) 878 0711</span>
                 </h3>
               </div>
               <div className="hidden md:block border-0 bg-white p-4 rounded-2xl  text-center w-full sm:w-3/4 md:w-1/2 lg:w-1/5 shadow-lg  min-w-[200px]">

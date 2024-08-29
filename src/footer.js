@@ -8,7 +8,7 @@ function Footer() {
           <img
             src="/photos/amv_logo_white.png"
             alt="Logo"
-            className="h-80 w-80 object-contain min-w-[200px]"
+            className="h-56 w-56 object-contain min-w-[200px]"
           />
         </div>
         <div className="text-center w-full md:w-auto">
@@ -51,8 +51,12 @@ function Footer() {
             </a>
           </p>
           <p>
-            <a href="tel:1234567890" className="hover:underline">
-              (02) 783-2351
+            <a
+              href="tel:(0917) 878 0711
+"
+              className="hover:underline"
+            >
+              (0917) 878 0711
             </a>
           </p>
           <p>Valenzuela City, Philippines</p>
