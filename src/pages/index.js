@@ -352,7 +352,7 @@ function Homepage() {
               <img
                 src="/photos/clients/vasquez1.jpg"
                 alt="Client Logo 20"
-                className="h-20 object-contain mx-auto scale-[.9] transition-transform duration-500 ease-in-out transform hover:scale-[1] grayscale hover:filter-none transition-filter"
+                className="h-20 object-contain mx-auto scale-[.7] transition-transform duration-500 ease-in-out transform hover:scale-[.8] grayscale hover:filter-none transition-filter"
               />
               <img
                 src="/photos/clients/digiplus.png"
@@ -382,12 +382,12 @@ function Homepage() {
               <img
                 src="/photos/clients/usaid.png"
                 alt="Client Logo 19"
-                className="h-20 object-contain mx-auto transition-transform duration-500 ease-in-out transform hover:scale-[1.1] grayscale hover:filter-none transition-filter"
+                className="h-20 object-contain mx-auto scale-[.8] transition-transform duration-500 ease-in-out transform hover:scale-[.9] grayscale hover:filter-none transition-filter"
               />
               <img
                 src="/photos/clients/bci.png"
                 alt="Client Logo 1"
-                className="h-20 object-contain mx-auto scale-[.8] transition-transform duration-500 ease-in-out transform hover:scale-[.9] grayscale hover:filter-none transition-filter"
+                className="h-20 object-contain mx-auto scale-[.6] transition-transform duration-500 ease-in-out transform hover:scale-[.7] grayscale hover:filter-none transition-filter"
               />
 
               <img
@@ -403,7 +403,7 @@ function Homepage() {
               <img
                 src="/photos/clients/mercusys.jpg"
                 alt="Client Logo 7"
-                className="h-20 object-contain mx-auto scale-[1.3] transition-transform duration-500 ease-in-out transform hover:scale-[1.4] grayscale hover:filter-none transition-filter"
+                className="h-20 object-contain mx-auto scale-[1.1] transition-transform duration-500 ease-in-out transform hover:scale-[1.2] grayscale hover:filter-none transition-filter"
               />
               <img
                 src="/photos/clients/mynt.png"
@@ -414,8 +414,9 @@ function Homepage() {
               <img
                 src="/photos/clients/solartransport1.jpg"
                 alt="Client Logo 11"
-                className="h-20 object-contain mx-auto scale-[1.4] transition-transform duration-500 ease-in-out transform hover:scale-[1.5] grayscale hover:filter-none transition-filte"
+                className="h-20 w-32 object-cover mx-auto scale-[1.4] transition-transform duration-500 ease-in-out transform hover:scale-[1.5] grayscale hover:filter-none"
               />
+
               <img
                 src="/photos/clients/supportninja.png"
                 alt="Client Logo 12"
@@ -445,7 +446,7 @@ function Homepage() {
               <img
                 src="/photos/clients/ateneo.png"
                 alt="Client Logo 18"
-                className="h-20 object-contain mx-auto scale-[1.3] transition-transform duration-500 ease-in-out transform hover:scale-[1.4] grayscale hover:filter-none transition-filter"
+                className="h-20 object-contain mx-auto scale-[1.1] transition-transform duration-500 ease-in-out transform hover:scale-[1.2] grayscale hover:filter-none transition-filter"
               />
             </div>
           </div>
