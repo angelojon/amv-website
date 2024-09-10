@@ -3,11 +3,6 @@ import { FaArrowRight, FaPhoneAlt } from "react-icons/fa";
 import { useInView } from "react-intersection-observer";
 import "./animate.css";
 
-<meta
-  name="google-site-verification"
-  content="_3IP7owVc2UQN0IpVlmFngkPPwxyfeO8zsOkEe_tt5U"
-/>;
-
 function Homepage() {
   // Hook to track if sections are in view
   const { ref: aboutRef, inView: aboutInView } = useInView({
